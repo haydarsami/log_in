@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/style.css" />
+    <title>Sign Up</title>
+  </head>
+  <body>
+    <!-- start svj -->
+    <div class="context">
+    </div>
+
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+    <!-- end svj -->
+    <div class="signup">
+      <div class="head">
+        <h1>Sign Up</h1>
+        <p>Pleasw fill in this form to create an account!</p>
+      </div>
+      <div class="info">
+        <div class="name">
+          <input type="text" class="Fname" placeholder="First Name">
+          <input type="text" class="Lname" placeholder="Last Name">
+        </div>
+        <div class="accInfo">
+          <input type="text" class="email" placeholder="Email">
+          <input type="password" id="password" class="password" value="" placeholder="Password">
+          <p class="length" id="passlevel"></p>
+          <input type="password" id="password2" class="confPassword" placeholder="Confirm Password" value="">
+          <p class="length" id="passlevel2"></p>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="accept">
+          <input type="checkbox">
+          <p>accept the <a href="">Terms of use</a> & <a href="">Privacy Policy</a></p>
+        </div>
+      </div>
+      <div class="button">
+        <button>Sign Up</button>
+      </div>
+    </div>
+    <script>
+      function passvallidation(){
+      var passlength = document.getElementById("passlevel");
+      var pass = document.getElementById("password").value;
+      var passlength2 = document.getElementById("passlevel2");
+      var pass2 = document.getElementById("password2").value;
+      // console.log(pass.length);
+      if (pass.length ==  0) {
+        passlength.className = "length"
+        passlength.innerHTML = ""
+      }
+      else if (pass.length < 8 && pass.length >0) {
+        passlength.className = "length1"
+        passlength.innerHTML = "Week"
+      }
+      else if (pass.length >= 8 && pass.includes("%") || pass.includes("$") || pass.includes("&") || pass.includes("#")) {
+        passlength.className = "length3"
+        passlength.innerHTML = "Very strong"
+      }
+      else if (pass.length >= 8) {
+        passlength.className = "length2"
+        passlength.innerHTML = "Strong"
+      }
+      if (pass2 == "") {
+        passlength2.className = "length4"
+        passlength2.innerHTML = ""
+      }
+      else if (pass.length < 8) {
+        passlength2.className = "length4"
+        passlength2.innerHTML = ""
+      }
+      else if (pass2 != pass) {
+        passlength2.className = "length4"
+        passlength2.innerHTML = "No match"
+      }
+      else if (pass2 == pass) {
+        passlength2.className = "length5"
+        passlength2.innerHTML = "Matched"
+      }
+    }
+      // function setDate() {
+      //   console.log(pass)
+      // }
+      setInterval(passvallidation, 500);
+      // start svj
+      
+    </script>
+  </body>
+</html>
